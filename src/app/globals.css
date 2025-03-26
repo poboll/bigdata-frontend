@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Bender';
+  src: url('/fonts/Bender.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BenderBlack';
+  src: url('/fonts/BenderBlack.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 24 5% 79%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 24 5% 79%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 24 5% 79%;
+
+    --primary: 252 27% 51%;
+    --primary-foreground: 24 5% 79%;
+
+    --secondary: 196 11% 54%;
+    --secondary-foreground: 24 5% 79%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 24 10% 30%;
+    --accent-foreground: 24 5% 79%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 24 5% 79%;
+
+    --border: 24 10% 30%;
+    --input: 24 10% 30%;
+    --ring: 24 10% 30%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 24 5% 79%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 24 5% 79%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 24 5% 79%;
+
+    --primary: 252 27% 51%;
+    --primary-foreground: 24 5% 79%;
+
+    --secondary: 196 11% 54%;
+    --secondary-foreground: 24 5% 79%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 24 10% 30%;
+    --accent-foreground: 24 5% 79%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 24 5% 79%;
+
+    --border: 24 10% 30%;
+    --input: 24 10% 30%;
+    --ring: 252 27% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Bender', sans-serif;
+    background-image: url('/images/bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'BenderBlack', sans-serif;
+  }
+}
+
+@layer components {
+  .header-link {
+    @apply text-foreground hover:text-primary transition-colors;
+  }
+
+  .location-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded p-4;
+  }
+
+  .location-percentage {
+    @apply bg-black/60 border border-border p-2 inline-block text-foreground;
+  }
+}
